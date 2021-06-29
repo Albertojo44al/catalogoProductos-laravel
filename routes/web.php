@@ -12,11 +12,14 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Models\Producto;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Auth::routes();
+
+Route::get('/crear-producto', [App\Http\Controllers\ProductosController::class, 'crearProducto']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
